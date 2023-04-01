@@ -1,21 +1,28 @@
 import random
 
-low = 0
-high = 50
-option = 30
-number = random.randint(low, high)
+def lottery_pool():
+    while 1:
 
-while True:
-    guess = int(input(f"Enter a number between ({low} - {high}): "))
+          Username = input("Enter your name here ")
+          User_number = int(input("Choose a number between 0 and 50: "))
+          winning_number = 30
+
+
+         #  Check if the number is not greater than 50
+          if User_number > 50:
+             print("You are disqualified!!!. You didnt choose a number between 0 and 50.")
+          else:
+    # Generate a random number for the lottery
+             User_number = random.randint(0, 50)
     
-    if guess < option:
-        print(f"{guess} Sorry try again!")
+    # Check if the user won the lottery
+             if User_number == winning_number:
+               print("Congratulations, you won the lottery!" , winning_number) 
+             
+             else:
+               print("Sorry, you didn't win the lottery. Your randomly generated number is", User_number,)
+          break 
 
-    elif guess > option:
-        print(f"{guess} sorry try again!")
-     
-    if guess == option:
-        
-        print(f"Congratulations, you have Won!!!") 
-        break
-print(f"Your Lucky number is {option}") 
+
+  
+lottery_pool()
